@@ -3,18 +3,18 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const router = require('./router');
+const authRouter = require('./auth/router');
 
 const app = express();
 
 app.use(express.json());
 app.use(cors);
 
-app.use(router);
-
 app.get('/', async (req, res) => {
   res.status(200).send('Hello World');
 });
+
+app.use(authRouter);
 
 const start = (port) => app.listen(port, () => console.log('Running on port ', port));
 
