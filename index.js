@@ -1,11 +1,11 @@
 'use strict';
 
 require('dotenv').config();
-const { database } = require('./src/auth/models/index');
+const { db } = require('./src/auth/models/index');
 const { start } = require('./src/server');
 const PORT = process.env.PORT || 3002;
 
-database.sync()
+db.sync()
   .then(() => {
     console.log('Database connected');
 
