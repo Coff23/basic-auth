@@ -15,6 +15,4 @@ const userModel = (sequelize, DataTypes) => {
   return Users;
 };
 
-module.exports = {
-  userModel,
-};
+module.exports = userModel;
